@@ -28,3 +28,13 @@ describe("stringContaining", () => {
     expect("hello").not.toEqual(expect.stringContaining("www"));
   });
 });
+
+describe("toContain", () => {
+  test("toContain", () => {
+    expect([1, 2, 3]).toContain(1);
+  });
+  test("toContainEqual", () => {
+    const myBeverage = { delicious: true };
+    expect([{ delicious: true }, { sour: false }]).toContainEqual(myBeverage);
+  });
+});
