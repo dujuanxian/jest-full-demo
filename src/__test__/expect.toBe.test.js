@@ -37,3 +37,18 @@ test("toBeFalsy", () => {
 test("toBeTruthy", () => {
   expect(NaN).not.toBeTruthy();
 });
+describe("toEqual", () => {
+  test("toEqual", () => {
+    expect({ a: 1 }).toEqual({ a: 1 });
+    expect({ a: 1 }).not.toBe({ a: 1 });
+  });
+  test("toStrictEqual", () => {
+    class LaCroix {
+      constructor(flavor) {
+        this.flavor = flavor;
+      }
+    }
+    expect(new LaCroix("lemon")).toEqual({ flavor: "lemon" });
+    expect(new LaCroix("lemon")).not.toStrictEqual({ flavor: "lemon" });
+  });
+});
