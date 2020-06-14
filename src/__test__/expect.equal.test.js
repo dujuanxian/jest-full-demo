@@ -52,3 +52,11 @@ describe("toEqual", () => {
     expect(new LaCroix("lemon")).not.toStrictEqual({ flavor: "lemon" });
   });
 });
+
+test("toHaveLength", () => {
+  expect([1, 2, 3]).toHaveLength(3);
+});
+test("toHaveProperty", () => {
+  const a = { b: { c: 1 } };
+  expect(a).toHaveProperty("b.c", 1);
+});
